@@ -2,6 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ShippingCard extends StatelessWidget {
+  final String profilResmLinki;
+  final String isimSoyad;
+  final String gecenSure;
+  final String gonderiResimLinki;
+  final String aciklama;
+
+  const ShippingCard({Key key, this.profilResmLinki, this.isimSoyad, this.gecenSure, this.gonderiResimLinki, this.aciklama}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +38,7 @@ class ShippingCard extends StatelessWidget {
                                 color: Colors.indigo,
                                 image: DecorationImage(
                                     image: NetworkImage(
-                                        "https://cdn.pixabay.com/photo/2016/03/09/15/10/man-1246508_1280.jpg"),
+                                       profilResmLinki),
                                     fit: BoxFit.cover)),
                           ),
                           SizedBox(width: 13.0),
@@ -39,13 +46,13 @@ class ShippingCard extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "İsim Soyad",
+                                isimSoyad,
                                 style: TextStyle(
                                     fontSize: 15.0,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black),
                               ),
-                              Text("1 saat sonra"),
+                              Text(gecenSure),
                             ],
                           ),
                         ],
@@ -55,7 +62,7 @@ class ShippingCard extends StatelessWidget {
                   ),
                   SizedBox(height: 15.0),
                   Text(
-                    "Resim açıklaması.",
+                    aciklama,
                     style: TextStyle(
                       fontSize: 18.0,
                       color: Colors.grey,
@@ -65,7 +72,7 @@ class ShippingCard extends StatelessWidget {
                     height: 15.0,
                   ),
                   Image.network(
-                    "https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg",
+                    gonderiResimLinki,
                     width: double.infinity,
                     height: 200.0,
                     fit: BoxFit.cover,
@@ -86,7 +93,7 @@ class ShippingCard extends StatelessWidget {
                       // fonksiyonlar içerisine butonların yapıcağı işlemler yazılacak.
                       iconButon(
                           ikonum: Icons.message,
-                          yazi: "Yorum yap",
+                          yazi: "Yorum Yap",
                           fonksiyonum: () {
                             print("Yorum Yap");
                           }),
